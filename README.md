@@ -127,7 +127,7 @@ sudo dnf clean all
 sudo dnf install -y nano zabbix-server-pgsql zabbix-web-pgsql zabbix-nginx-conf zabbix-sql-scripts zabbix-selinux-policy zabbix-agent2 zabbix-agent2-plugin-postgresql
 ```
 
-## 2.2 Configurar o Zabbix Server para usar o banco no Servidor 1
+### 2.2 Configurar o Zabbix Server para usar o banco no Servidor 1
 
 ```bash
 sudo nano /etc/zabbix/zabbix_server.conf
@@ -141,14 +141,14 @@ DBUser=zabbix \
 DBPassword=sua_senha
 
 
-## 2.3 Importar o schema no banco remoto
+### 2.3 Importar o schema no banco remoto
 
 
 ```bash
 sudo zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | PGPASSWORD="sua_senha" psql -h 192.168.1.201 -U zabbix -d zabbix
 ```
 
-## 2.4 Iniciar serviços
+### 2.4 Iniciar serviços
 
 ```bash
 sudo systemctl enable --now zabbix-server zabbix-agent2 nginx php-fpm
@@ -158,7 +158,7 @@ sudo systemctl enable --now zabbix-server zabbix-agent2 nginx php-fpm
 sudo systemctl restart zabbix-server zabbix-agent2 nginx php-fpm
 ```
 
-## 2.5 Configuração de Firewall
+### 2.5 Configuração de Firewall
 
 ```bash
 sudo systemctl enable firewalld
@@ -212,6 +212,9 @@ sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.206" port port="10051" protocol="tcp" accept'
 ```` 
 
+---
+
+## 3. Preparar o Servidor do Zabbix Proxy Local (Servidor 3 – Proxy Local)
 
 
 
