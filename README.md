@@ -20,7 +20,7 @@ Fazer update do sistema
 sudo dnf update -y
 ```
 
-### Instalar PostgreSQL
+### 1.1 Instalar PostgreSQL
 
 ```bash
 sudo dnf install postgresql-server postgresql-contrib
