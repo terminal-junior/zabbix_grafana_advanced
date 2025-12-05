@@ -34,8 +34,10 @@ sudo systemctl enable --now postgresql
 
 ### 1.2 Configurar o PostgreSQL para aceitar conexões remotas
 
-Editar postgresql.conf
-
+Editar 
+```
+postgresql.conf
+```
 Arquivo normalmente em:
 
 ```bash
