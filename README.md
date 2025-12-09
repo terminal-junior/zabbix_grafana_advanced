@@ -223,24 +223,24 @@ sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address
 
 ## 4. Preparar o Servidor Grafana (Servidor 4 - Grafana)
 
-### 🛠️ 1. Atualizando o sistema
+### 🛠️ 4.1 Atualizando o sistema
 
 ```bash
 sudo dnf update -y
 ```
 
-### 🧩 2. Instalando pacotes básicos
+### 🧩 4.2 Instalando pacotes básicos
 ```bash
 sudo dnf install -y nano openssh-server firewalld
 ```
 
-### 🔧 3. Habilitando e iniciando serviços essenciais
+### 🔧 4.3 Habilitando e iniciando serviços essenciais
 ```bash
 sudo systemctl enable sshd firewalld
 sudo systemctl start sshd firewalld
 ```
 
-### 📦 4. Instalando o Grafana Enterprise 12.3.0
+### 📦 4.4 Instalando o Grafana Enterprise 12.3.0
 
 Baixe e instale o pacote .rpm:
 
@@ -261,7 +261,7 @@ sudo systemctl start grafana-server
 sudo systemctl enable grafana-server
 ```
 
-### 🔥 5. Configurando Firewall (firewalld)
+### 🔥 4.5 Configurando Firewall (firewalld)
 
 Libere o acesso à porta 3000 (Grafana) apenas para a rede interna:
 
@@ -281,7 +281,7 @@ Recarregue o firewall:
 sudo firewall-cmd --reload
 ```
 
-### 🚀 6. Acessando o Grafana
+### 🚀 4.6 Acessando o Grafana
 
 Abra o navegador e acesse:
 
