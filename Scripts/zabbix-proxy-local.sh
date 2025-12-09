@@ -5,6 +5,8 @@
 # Rocky Linux 9 + PostgreSQL
 # -----------------------------------------------
 
+hostnamectl set-hostname Zabbix-Proxy
+
 echo "=== Atualizando o sistema e instalando pacotes básicos ==="
 dnf update -y &>/dev/null
 dnf install -y nano openssh-server firewalld &>/dev/null
