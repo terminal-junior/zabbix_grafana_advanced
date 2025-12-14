@@ -29,9 +29,6 @@ sudo dnf install postgresql-server postgresql-contrib
 ```
 ```bash
 sudo postgresql-setup --initdb
-
-```
-```bash
 sudo systemctl enable --now postgresql
 
 ```
@@ -105,15 +102,7 @@ sudo systemctl restart postgresql
 
 ```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" service name="ssh" accept'
-
-```
-
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.202" port port="5432" protocol="tcp" accept'
-
-```
-
-```bash
 sudo firewall-cmd --reload
 
 ```
@@ -171,10 +160,6 @@ sudo zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | PGPASSWORD="s
 
 ```bash
 sudo systemctl enable --now zabbix-server zabbix-agent2 nginx php-fpm
-
-```
-
-```bash
 sudo systemctl restart zabbix-server zabbix-agent2 nginx php-fpm
 
 ```
@@ -193,58 +178,19 @@ sudo systemctl start firewalld
  
 ```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" service name="ssh" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" port port="443" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.0/24" port port="80" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.203" port port="10050" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.203" port port="10051" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.204" port port="80" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.204" port port="443" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.204" port port="10050" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.204" port port="10051" protocol="tcp" accept'
-
-```
- 
-```bash
 sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.206" port port="10050" protocol="tcp" accept'
+sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.206" port port="10051" protocol="tcp" accept'
+sudo firewall-cmd --reload
 
 ```
- 
-```bash
-sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4" source address="192.168.1.206" port port="10051" protocol="tcp" accept'
-
-```` 
 
 ---
 
